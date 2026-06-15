@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+
+[project]
+name = "chen-optimum-temperature"
+version = "0.1.0"
+description = "global optimum growth temperature (Topt) dataset for terrestrial vegetation developed by Chen et al."
+readme = "README.md"
+authors = [
+    { name = "Gregory Halverson", email = "gregory.h.halverson@jpl.nasa.gov" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "rasters"
+]
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+dev = [
+    "build",
+    "pytest>=6.0",
+    "pytest-cov",
+    "jupyter",
+    "pytest",
+    "twine"
+]
+
+[tool.setuptools.packages.find]
+exclude = ["notebooks", "tests"]
+
+[tool.setuptools.package-data]
+chen_optimum_temperature = ["*.tif"]
+
+[project.urls]
+"Homepage" = "https://github.com/JPL-Evapotranspiration-Algorithms/chen_optimum_temperature"
