@@ -3,7 +3,7 @@ requires = ["setuptools", "wheel"]
 
 [project]
 name = "chen-optimum-temperature"
-version = "0.1.0"
+version = "1.0.0"
 description = "global optimum growth temperature (Topt) dataset for terrestrial vegetation developed by Chen et al."
 readme = "README.md"
 authors = [

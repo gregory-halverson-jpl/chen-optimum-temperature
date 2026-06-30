@@ -4,7 +4,7 @@ from rasters import Raster, RasterGeometry
 
 TOPT_FILENAME = join(abspath(dirname(__file__)), "chen_optimum_temperature_C.tif")
 
-def load_chen_optimum_temperature_C(geometry: RasterGeometry = None) -> Raster:
+def load_chen_optimum_temperature_C(geometry: RasterGeometry = None, resampling="cubic") -> Raster:
     """
     Load the optimum temperature raster.
 
@@ -12,6 +12,8 @@ def load_chen_optimum_temperature_C(geometry: RasterGeometry = None) -> Raster:
     ----------
     geometry : RasterGeometry, optional
         The geometry to which the raster should be transformed. If None, the original raster geometry is used.
+    resampling : str, optional
+        The resampling method to use when transforming the raster. Default is "cubic".
 
     Returns
     -------
@@ -21,7 +23,7 @@ def load_chen_optimum_temperature_C(geometry: RasterGeometry = None) -> Raster:
     Topt_C = Raster.open(TOPT_FILENAME)
 
     if geometry is not None:
-        Topt_C = Topt_C.to_geometry(geometry)
+        Topt_C = Topt_C.to_geometry(geometry, resampling=resampling)
 
     return Topt_C
     
